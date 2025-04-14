@@ -6,8 +6,277 @@
     <description>Recent content on Amal Chandran M V</description>
     <generator>Hugo -- 0.140.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://amalchandru.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Colors of Wes Anderson</title>
+      <link>https://amalchandru.github.io/journals/wes-pallete/</link>
+      <pubDate>Thu, 27 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://amalchandru.github.io/journals/wes-pallete/</guid>
+      <description>&lt;div class=&#34;container&#34; style=&#34;text-align: left;&#34;&gt;
+  &lt;button id=&#34;generate-palette&#34; onclick=&#34;generatePalette()&#34; style=&#34;font-size: 16px; cursor: pointer; padding: 5px 8px; background-color: black; color: white; border: none; border-radius: 5px; margin-bottom: 25px&#34;&gt;
+    Generate Palette
+  &lt;/button&gt;
+  &lt;div id=&#34;palette&#34; class=&#34;palette&#34;&gt;&lt;/div&gt;
+  &lt;p id=&#34;movie-title&#34; class=&#34;movie-subtext&#34;&gt;&lt;/p&gt;
+  &lt;div class=&#34;color-meanings&#34;&gt;
+    &lt;div id=&#34;color-meanings&#34;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Add CSS directly --&gt;
+&lt;style&gt;
+  body {
+    font-family: &#39;Courier New&#39;, monospace;
+    background: #f7f3ec;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .container {
+    max-width: 600px;
+  }
+
+  h3 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+
+  .palette {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .color-strip {
+    height: 100%;
+    width: 40%;
+  }
+
+  .movie-subtext {
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+    margin-top: 1px;
+    font-style: italic;
+  }
+
+  .color-meanings {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .color-meanings p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  .color-meanings .color-swatch {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .color-meanings .color-name {
+    font-weight: bold;
+    color: #222;
+    margin-right: 8px;
+  }
+
+    .instruction-text {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+
+&lt;/style&gt;
+&lt;!-- Embed JavaScript directly --&gt;
+&lt;script&gt;
+const palettes = [
+  {
+    movie: &#34;Bottle Rocket&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0115734/&#34;,
+    colors: [&#34;#ffcb6e&#34;, &#34;#003b5c&#34;, &#34;#f1b6a1&#34;, &#34;#8e9aaf&#34;, &#34;#f7f4ea&#34;],
+    description: &#34;Bright pastels and offbeat suburban energy.&#34;,
+    colorMeanings: [
+      { color: &#34;#ffcb6e&#34;, meaning: &#34;Soft yellow evokes the optimistic, yet naive spirit of the film&#39;s protagonists.&#34; },
+      { color: &#34;#003b5c&#34;, meaning: &#34;Deep navy speaks to the sense of ambition and the cool, calm tone of the film.&#34; },
+      { color: &#34;#f1b6a1&#34;, meaning: &#34;Muted peach suggests the awkward charm and vulnerability of the characters.&#34; },
+      { color: &#34;#8e9aaf&#34;, meaning: &#34;Cool blues and grays ground the film in a sense of reality amidst the absurdity.&#34; },
+      { color: &#34;#f7f4ea&#34;, meaning: &#34;Warm cream adds a nostalgic, quiet softness, reflecting the film’s modest, indie vibe.&#34; }
+    ]
+  },
+  {
+    movie: &#34;Rushmore&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0128445/&#34;,
+    colors: [&#34;#d62728&#34;, &#34;#f18f01&#34;, &#34;#9d4a39&#34;, &#34;#f1d7b2&#34;, &#34;#003366&#34;],
+    description: &#34;Bold reds and rich hues with schoolyard intensity.&#34;,
+    colorMeanings: [
+      { color: &#34;#d62728&#34;, meaning: &#34;Bright red captures the fiery passion and youthful energy of Max Fischer.&#34; },
+      { color: &#34;#f18f01&#34;, meaning: &#34;Warm orange brings energy and optimism, despite the film&#39;s darker comedic moments.&#34; },
+      { color: &#34;#9d4a39&#34;, meaning: &#34;Burnt orange and red tones suggest the emotional complexity and conflict between characters.&#34; },
+      { color: &#34;#f1d7b2&#34;, meaning: &#34;Pale beige adds a softer touch, mirroring the melancholy undertones of the film.&#34; },
+      { color: &#34;#003366&#34;, meaning: &#34;Dark blue anchors the film in its academic setting, providing a contrast to the chaotic energy.&#34; }
+    ]
+  },
+  {
+    movie: &#34;The Royal Tenenbaums&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0265666/&#34;,
+    colors: [&#34;#7b3f00&#34;, &#34;#eac67a&#34;, &#34;#d9a5b3&#34;, &#34;#fff3e3&#34;, &#34;#823e38&#34;],
+    description: &#34;Burnt reds and dysfunctional warmth.&#34;,
+    colorMeanings: [
+      { color: &#34;#7b3f00&#34;, meaning: &#34;Deep browns evoke feelings of nostalgia, loss, and the enduring marks of family dysfunction.&#34; },
+      { color: &#34;#eac67a&#34;, meaning: &#34;Golden yellows speak to faded grandeur, the warmth of family ties, and the optimism that often fades into disappointment.&#34; },
+      { color: &#34;#d9a5b3&#34;, meaning: &#34;Muted pinks embody the tenderness and vulnerability hidden beneath the film&#39;s sharp humor.&#34; },
+      { color: &#34;#fff3e3&#34;, meaning: &#34;Pale peach creates a sense of softness and nostalgia, the delicate residue of a once-ideal family dynamic.&#34; },
+      { color: &#34;#823e38&#34;, meaning: &#34;Burnt reds reflect passion, anger, and a simmering undercurrent of unresolved emotions within the Tenenbaum family.&#34; }
+    ]
+  },
+  {
+    movie: &#34;The Life Aquatic with Steve Zissou&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0362270/&#34;,
+    colors: [&#34;#a3d2ca&#34;, &#34;#5eaaa8&#34;, &#34;#056676&#34;, &#34;#f5f5f5&#34;, &#34;#edc988&#34;],
+    description: &#34;Oceanic blues and isolated brilliance.&#34;,
+    colorMeanings: [
+      { color: &#34;#a3d2ca&#34;, meaning: &#34;Soft aquamarine echoes the tranquil yet isolated nature of the ocean and the characters&#39; inner lives.&#34; },
+      { color: &#34;#5eaaa8&#34;, meaning: &#34;Teal brings an air of melancholy and introspection, marking the emotional distance of the characters from each other.&#34; },
+      { color: &#34;#056676&#34;, meaning: &#34;Deep ocean blue speaks to the film’s theme of exploration and adventure, juxtaposed with personal loss.&#34; },
+      { color: &#34;#f5f5f5&#34;, meaning: &#34;Cool white evokes clarity and neutrality, reflecting the sterile, sometimes detached environment of the ship.&#34; },
+      { color: &#34;#edc988&#34;, meaning: &#34;Warm amber tones represent the lingering effects of passion and legacy, echoing the characters&#39; ongoing quests.&#34; }
+    ]
+  },
+  {
+    movie: &#34;The Darjeeling Limited&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0838221/&#34;,
+    colors: [&#34;#5e2e1f&#34;, &#34;#f3bc92&#34;, &#34;#ce9a6a&#34;, &#34;#7b8a6d&#34;, &#34;#4a5561&#34;],
+    description: &#34;Rich earth tones and spiritual discovery.&#34;,
+    colorMeanings: [
+      { color: &#34;#5e2e1f&#34;, meaning: &#34;Deep reds symbolize passion, conflict, and the strained relationship between the brothers.&#34; },
+      { color: &#34;#f3bc92&#34;, meaning: &#34;Soft peach tones reflect the warmth and nostalgia of childhood memories and the bond of family.&#34; },
+      { color: &#34;#ce9a6a&#34;, meaning: &#34;Earthy browns capture the rugged beauty of India and the characters&#39; journey of self-discovery.&#34; },
+      { color: &#34;#7b8a6d&#34;, meaning: &#34;Muted greens emphasize the spiritual calm and introspection that the film evokes.&#34; },
+      { color: &#34;#4a5561&#34;, meaning: &#34;Slate grays anchor the film in its more serious, reflective moments, contrasting the vibrant surroundings.&#34; }
+    ]
+  },
+  {
+    movie: &#34;Fantastic Mr. Fox&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt0432283/&#34;,
+    colors: [&#34;#ff9900&#34;, &#34;#cc6600&#34;, &#34;#996600&#34;, &#34;#ffcc66&#34;, &#34;#ffeecc&#34;],
+    description: &#34;Autumnal chaos and corduroy charm.&#34;,
+    colorMeanings: [
+      { color: &#34;#ff9900&#34;, meaning: &#34;Bright orange represents the mischievous energy of Mr. Fox and his adventures, full of boldness and courage.&#34; },
+      { color: &#34;#cc6600&#34;, meaning: &#34;Earthy orange tones mirror the rustic environment of the countryside, as well as the resilience of the characters.&#34; },
+      { color: &#34;#996600&#34;, meaning: &#34;Deep mustard yellow suggests warmth and comfort, but also the hidden dangers of the foxes&#39; escapades.&#34; },
+      { color: &#34;#ffcc66&#34;, meaning: &#34;Light yellow adds a playful, whimsical touch to the overall aesthetic, fitting the charm and quirky tone of the story.&#34; },
+      { color: &#34;#ffeecc&#34;, meaning: &#34;Soft cream shades evoke the comfort of home and family, tying into the core theme of the importance of belonging.&#34; }
+    ]
+  },
+  {
+    movie: &#34;Moonrise Kingdom&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt1748122/&#34;,
+    colors: [&#34;#f7e199&#34;, &#34;#cdbb99&#34;, &#34;#80775b&#34;, &#34;#a7a8a3&#34;, &#34;#ffecb3&#34;],
+    description: &#34;Nostalgic scout-core in earthy tones.&#34;,
+    colorMeanings: [
+      { color: &#34;#f7e199&#34;, meaning: &#34;Soft yellow reflects innocence and the fleeting nature of childhood, grounding the coming-of-age narrative.&#34; },
+      { color: &#34;#cdbb99&#34;, meaning: &#34;Beige tones suggest practicality and the ruggedness of a world in transition, much like the characters themselves.&#34; },
+      { color: &#34;#80775b&#34;, meaning: &#34;Muted greenish browns bring a sense of earthiness and groundedness, tying the characters to nature and their desires.&#34; },
+      { color: &#34;#a7a8a3&#34;, meaning: &#34;Cool grays emphasize the sense of melancholy and emotional distance, reflective of the tension in the characters’ worlds.&#34; },
+      { color: &#34;#ffecb3&#34;, meaning: &#34;Soft, pastel yellow adds warmth and a touch of whimsy, fitting the adventurous and innocent spirit of the young lovers.&#34; }
+    ]
+  },
+  {
+    movie: &#34;The Grand Budapest Hotel&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt2278388/&#34;,
+    colors: [&#34;#f6c3d0&#34;, &#34;#e9a8b2&#34;, &#34;#9e4a64&#34;, &#34;#fef0e3&#34;, &#34;#5d6973&#34;],
+    description: &#34;Sugary pinks and bittersweet whimsy.&#34;,
+    colorMeanings: [
+      { color: &#34;#f6c3d0&#34;, meaning: &#34;Soft pink symbolizes innocence and nostalgia, contrasting with the film’s more somber undertones.&#34; },
+      { color: &#34;#e9a8b2&#34;, meaning: &#34;Muted coral evokes warmth and romanticism, tying into the themes of love and memory.&#34; },
+      { color: &#34;#9e4a64&#34;, meaning: &#34;Rich burgundy mirrors the deeper emotional currents of the story, hinting at luxury and longing.&#34; },
+      { color: &#34;#fef0e3&#34;, meaning: &#34;Pale yellow adds an element of lightness and hope, reminiscent of the grandeur of the hotel.&#34; },
+      { color: &#34;#5d6973&#34;, meaning: &#34;Dark slate blues ground the film in sophistication and provide a cool counterpoint to the warmer tones.&#34; }
+    ]
+  },
+  {
+    movie: &#34;Isle of Dogs&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt5104604/&#34;,
+    colors: [&#34;#b9d3b8&#34;, &#34;#e84a5f&#34;, &#34;#1d1f2c&#34;, &#34;#f4bfa5&#34;, &#34;#c0a8a1&#34;],
+    description: &#34;Muted tones with stark contrasts and loyalty.&#34;,
+    colorMeanings: [
+      { color: &#34;#b9d3b8&#34;, meaning: &#34;Soft greens represent the lushness of the island and the enduring bond between the dogs.&#34; },
+      { color: &#34;#e84a5f&#34;, meaning: &#34;Vivid red evokes the urgency and emotional intensity of the film’s themes of loyalty and sacrifice.&#34; },
+      { color: &#34;#1d1f2c&#34;, meaning: &#34;Deep blues and blacks add a serious, industrial tone, emphasizing the dystopian setting.&#34; },
+      { color: &#34;#f4bfa5&#34;, meaning: &#34;Warm peaches contrast the bleakness of the story, adding a layer of humor and humanity to the struggle.&#34; },
+      { color: &#34;#c0a8a1&#34;, meaning: &#34;Muted grays represent the film’s melancholic reflections and the isolation of the dogs.&#34; }
+    ]
+  },
+  {
+    movie: &#34;The French Dispatch&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt8847712/&#34;,
+    colors: [&#34;#e9d5b6&#34;, &#34;#6f4f4f&#34;, &#34;#d34e2e&#34;, &#34;#a0a9b6&#34;, &#34;#efc8c2&#34;],
+    description: &#34;Crisp colors with a vintage, editorial feel.&#34;,
+    colorMeanings: [
+      { color: &#34;#e9d5b6&#34;, meaning: &#34;Pale beige suggests nostalgia and the timeless quality of journalistic storytelling.&#34; },
+      { color: &#34;#6f4f4f&#34;, meaning: &#34;Warm browns reflect the earthiness of the film&#39;s setting and the enduring nature of print media.&#34; },
+      { color: &#34;#d34e2e&#34;, meaning: &#34;Vibrant red brings an intensity to the story’s exploration of art, activism, and personal passion.&#34; },
+      { color: &#34;#a0a9b6&#34;, meaning: &#34;Cool blues add a professional, polished air, fitting the refined aesthetic of the magazine.&#34; },
+      { color: &#34;#efc8c2&#34;, meaning: &#34;Soft pinks highlight the tenderness and eccentricity of the film’s characters and their stories.&#34; }
+    ]
+  },
+  {
+    movie: &#34;Asteroid City&#34;,
+    imdb: &#34;https://www.imdb.com/title/tt14230388/&#34;,
+    colors: [&#34;#e4b7a0&#34;, &#34;#9abdb2&#34;, &#34;#3c4f66&#34;, &#34;#e7e5b4&#34;, &#34;#af5b40&#34;],
+    description: &#34;Retro pastels with a cosmic flair.&#34;,
+    colorMeanings: [
+      { color: &#34;#e4b7a0&#34;, meaning: &#34;Peach tones evoke a sense of nostalgia and softness, countering the film’s existential themes.&#34; },
+      { color: &#34;#9abdb2&#34;, meaning: &#34;Muted teal represents the tension between the futuristic setting and timeless human emotions.&#34; },
+      { color: &#34;#3c4f66&#34;, meaning: &#34;Dark blues and grays anchor the cosmic setting, reflecting the isolation and vastness of space.&#34; },
+      { color: &#34;#e7e5b4&#34;, meaning: &#34;Pale yellows and greens bring a touch of surrealism, hinting at the strange, dream-like qualities of the film.&#34; },
+      { color: &#34;#af5b40&#34;, meaning: &#34;Earthy browns suggest the human connection to the environment and the film&#39;s existential reflections.&#34; }
+    ]
+  }
+];
+
+  function generatePalette() {
+    const palette = palettes[Math.floor(Math.random() * palettes.length)];
+    const paletteDiv = document.getElementById(&#34;palette&#34;);
+    paletteDiv.innerHTML = &#34;&#34;;
+    
+    // Generate the palette with stripes of colors
+    const paletteWidth = palette.colors.length * 100;
+    palette.colors.forEach((color, index) =&gt; {
+      const stripe = document.createElement(&#34;div&#34;);
+      stripe.className = &#34;color-stripe&#34;;
+      stripe.style.backgroundColor = color;
+      stripe.style.width = `${100}%`;
+      stripe.style.height = &#34;100%&#34;;
+      paletteDiv.appendChild(stripe);
+    });
+
+    // Update movie title and description as a single subtext under the palette
+document.getElementById(&#34;movie-title&#34;).innerHTML = `&lt;a href=&#34;${palette.imdb}&#34; target=&#34;_blank&#34; style=&#34;text-decoration: none; color: inherit;&#34;&gt;&lt;strong&gt;${palette.movie}&lt;/strong&gt;&lt;/a&gt;: ${palette.description}`;
+
+    const colorMeaningsDiv = document.getElementById(&#34;color-meanings&#34;);
+    colorMeaningsDiv.innerHTML = &#34;&#34;;
+    palette.colorMeanings.forEach(meaning =&gt; {
+      const p = document.createElement(&#34;p&#34;);
+      p.innerHTML = `&lt;strong style=&#34;color:${meaning.color}&#34;&gt;${meaning.color}&lt;/strong&gt;: ${meaning.meaning}`;
+      colorMeaningsDiv.appendChild(p);
+    });
+  }
+&lt;/script&gt;</description>
+    </item>
     <item>
       <title>The Caged Song</title>
       <link>https://amalchandru.github.io/journals/creativity/</link>

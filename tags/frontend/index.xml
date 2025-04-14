@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Writings on Amal Chandran M V</title>
-    <link>https://amalchandru.github.io/tags/writings/</link>
-    <description>Recent content in Writings on Amal Chandran M V</description>
+    <title>Frontend on Amal Chandran M V</title>
+    <link>https://amalchandru.github.io/tags/frontend/</link>
+    <description>Recent content in Frontend on Amal Chandran M V</description>
     <generator>Hugo -- 0.140.1</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://amalchandru.github.io/tags/writings/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amalchandru.github.io/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Colors of Wes Anderson</title>
       <link>https://amalchandru.github.io/journals/wes-pallete/</link>
@@ -276,32 +276,6 @@ document.getElementById(&#34;movie-title&#34;).innerHTML = `&lt;a href=&#34;${pa
     });
   }
 &lt;/script&gt;</description>
-    </item>
-    <item>
-      <title>The Caged Song</title>
-      <link>https://amalchandru.github.io/journals/creativity/</link>
-      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://amalchandru.github.io/journals/creativity/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;I used to believe that creativity thrived in absolute freedom.&lt;br&gt;
-But over time, I wondered - do limits hold it back, or do they give it shape?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;A bird in flight may roam the skies,&lt;br&gt;
-Yet sings no tune, just silent sighs.&lt;br&gt;
-But cage the wings, confine its space,&lt;br&gt;
-A melody will fill the place.&lt;/p&gt;
-&lt;p&gt;For freedom vast may lose its way,&lt;br&gt;
-While boundaries teach the notes to play.&lt;br&gt;
-Not every wall is built to bind,&lt;br&gt;
-Some shape the song within the mind.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>2024 -&gt; 2025</title>
-      <link>https://amalchandru.github.io/journals/blogpost/</link>
-      <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://amalchandru.github.io/journals/blogpost/</guid>
-      <description>&lt;p&gt;2024 was a busy year. I shifted two houses this year, visited four places on my travel list, completed two half marathons, and went on a long bike trip of 650+ kilometers. I also found myself in some tough conversations and situations.&lt;/p&gt;
-&lt;p&gt;Here are some lessons I learned this year. Some are common sense, but I’ve included them because I tend to overlook the obvious. Some are my own realizations, and others come from wise people I’ve met along the way:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
