@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Frontend on Amal Chandran M V</title>
+    <link>https://amalchandran.xyz/tags/frontend/</link>
+    <description>Recent content in Frontend on Amal Chandran M V</description>
+    <generator>Hugo -- 0.127.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://amalchandran.xyz/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Colors of Wes Anderson</title>
+      <link>https://amalchandran.xyz/journals/wes-pallete/</link>
+      <pubDate>Thu, 27 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://amalchandran.xyz/journals/wes-pallete/</guid>
+      <description> Generate Palette </description>
+    </item>
+  </channel>
+</rss>
