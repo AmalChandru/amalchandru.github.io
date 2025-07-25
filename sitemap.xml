@@ -3,15 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://amalchandran.xyz/</loc>
-    <lastmod>2025-05-23T16:06:35+05:30</lastmod>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/categories/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/homelab/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/kubernetes/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/talks/neozorba-nixlab/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/nix/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/self-hosting/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/talks/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/categories/talks/</loc>
+    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/journals/flood-amoung-trees/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/tags/art/</loc>
-    <lastmod>2025-05-23T16:06:35+05:30</lastmod>
-  </url><url>
-    <loc>https://amalchandran.xyz/categories/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/journals/</loc>
@@ -20,14 +44,23 @@
     <loc>https://amalchandran.xyz/categories/philosophy/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
-    <loc>https://amalchandran.xyz/tags/</loc>
-    <lastmod>2025-05-23T16:06:35+05:30</lastmod>
-  </url><url>
     <loc>https://amalchandran.xyz/categories/themes/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/tags/water-color/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/talks/blinking-leds/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/electronics/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/programming/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/software/</loc>
+    <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/journals/earth-bound-misfit/</loc>
     <lastmod>2025-05-19T15:44:35+05:30</lastmod>
