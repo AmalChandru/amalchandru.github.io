@@ -3,10 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://amalchandran.xyz/</loc>
-    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/categories/</loc>
-    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/container/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/journals/building-container-networking-from-scratch-part-1/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/journals/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/linux/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/networking/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/categories/programming/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/categories/software/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://amalchandran.xyz/tags/</loc>
+    <lastmod>2026-02-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/tags/homelab/</loc>
     <lastmod>2025-07-25T00:00:00+00:00</lastmod>
@@ -23,9 +47,6 @@
     <loc>https://amalchandran.xyz/tags/self-hosting/</loc>
     <lastmod>2025-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://amalchandran.xyz/tags/</loc>
-    <lastmod>2025-07-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://amalchandran.xyz/talks/</loc>
     <lastmod>2025-07-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -36,9 +57,6 @@
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/tags/art/</loc>
-    <lastmod>2025-05-23T16:06:35+05:30</lastmod>
-  </url><url>
-    <loc>https://amalchandran.xyz/journals/</loc>
     <lastmod>2025-05-23T16:06:35+05:30</lastmod>
   </url><url>
     <loc>https://amalchandran.xyz/categories/philosophy/</loc>
