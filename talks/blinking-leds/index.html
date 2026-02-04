@@ -28,26 +28,14 @@
 
     </style>
 </noscript>
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-YV335L7966');
-        }
-      </script>
-    
-  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<meta property="og:url" content="https://amalchandran.xyz/talks/blinking-leds/">
+  gtag('config', 'G-YV335L7966');
+</script><meta property="og:url" content="https://amalchandran.xyz/talks/blinking-leds/">
   <meta property="og:site_name" content="Amal Chandran M V">
   <meta property="og:title" content="Blinking LEDs: For the Brave and Curious">
   <meta property="og:description" content="Some years ago, boredom struck the night before an exam (cue gif: “I know this one, this is classic”). I decided to flash the Arduino blink sketch, but without the Arduino IDE, or even Arduino functions. Just raw C. What started as a dumb idea spiraled into a decent rabbit hole, which somehow became a flash talk I gave at a few places. Eventually bundled it all into a repo during Kochi FOSS meetup.">

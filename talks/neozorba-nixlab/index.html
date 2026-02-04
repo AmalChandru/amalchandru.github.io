@@ -31,26 +31,14 @@ Full setup here → neozorba-nixlab.local">
 
     </style>
 </noscript>
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-YV335L7966');
-        }
-      </script>
-    
-  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<meta property="og:url" content="https://amalchandran.xyz/talks/neozorba-nixlab/">
+  gtag('config', 'G-YV335L7966');
+</script><meta property="og:url" content="https://amalchandran.xyz/talks/neozorba-nixlab/">
   <meta property="og:site_name" content="Amal Chandran M V">
   <meta property="og:title" content="neozorba@nixlab - A highly opinionated, minimalist, declarative Kubernetes homelab">
   <meta property="og:description" content="A self-hosted, NixOS-powered homelab running a lightweight Kubernetes cluster via k3s, complete with monitoring and dashboards; all declaratively managed and exposed via local DNS.

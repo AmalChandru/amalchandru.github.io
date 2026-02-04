@@ -30,26 +30,14 @@ Under the hood, container networking is built from a small set of Linux primitiv
 
     </style>
 </noscript>
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-YV335L7966');
-        }
-      </script>
-    
-  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV335L7966"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<meta property="og:url" content="https://amalchandran.xyz/journals/building-container-networking-from-scratch-part-1/">
+  gtag('config', 'G-YV335L7966');
+</script><meta property="og:url" content="https://amalchandran.xyz/journals/building-container-networking-from-scratch-part-1/">
   <meta property="og:site_name" content="Amal Chandran M V">
   <meta property="og:title" content="How Containers Actually Work: Building Container Networking From Scratch">
   <meta property="og:description" content="Containers often feel like magic, and container networking can seem like a higher form of black magic. A process starts, gets its own IP address, can reach the internet, and talks to other containers. All without us touching low-level networking.
