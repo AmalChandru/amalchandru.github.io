@@ -122,13 +122,6 @@ h1.name{
 }
 .tagline{ margin:0 0 1.6rem; font-size:1.05rem; color:var(--fg-secondary); font-style:italic; }
 
-.hero-banner{
-  position:relative; width:100%; aspect-ratio:4 / 1; overflow:hidden;
-  background:var(--bg-surface); border:1px solid var(--border); border-radius:10px;
-  margin:0 0 2rem;
-}
-.hero-canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; }
-
 .bio{ margin:0 0 1.75rem; }
 .bio p{ margin:0 0 1.1rem; font-size:1rem; line-height:1.75; color:var(--fg-primary); }
 .bio p:last-child{ margin-bottom:0; }
