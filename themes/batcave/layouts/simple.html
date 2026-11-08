@@ -1,0 +1,11 @@
+{{- /* A plain page: title and prose, no date or table of contents (e.g. Self). */ -}}
+{{ define "main" }}
+<article id="content" class="wrap page">
+  <div class="grid">
+    <header class="page-head simple-head">
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+    <div class="prose lede">{{ .Content }}</div>
+  </div>
+</article>
+{{ end }}

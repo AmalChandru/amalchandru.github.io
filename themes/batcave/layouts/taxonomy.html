@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div id="content" class="wrap page">
+  <div class="grid">
+    <header class="page-head"><h1 class="page-title">{{ .Title }}</h1></header>
+    <ul class="tag-cloud">
+      {{- range .Data.Terms.Alphabetical }}
+      <li><a href="{{ .Page.RelPermalink }}">#{{ .Page.LinkTitle }}</a> <span>{{ .Count }}</span></li>
+      {{- end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

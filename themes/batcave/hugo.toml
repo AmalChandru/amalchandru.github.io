@@ -1,0 +1,4 @@
+# Batcave: a small, dependency-free theme for amalchandran.xyz.
+[module.hugoVersion]
+  extended = false
+  min = "0.146.0"

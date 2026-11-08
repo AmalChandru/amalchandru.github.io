@@ -1,0 +1,17 @@
+{{- /*
+  Random Wes Anderson colour palette. Data: palettes.json in the page bundle.
+  Used by content/journals/wes-pallete.
+*/ -}}
+{{- $data := .Page.Resources.Get "palettes.json" }}
+{{- if not $data }}{{ errorf "wes-palette: palettes.json missing in %s" .Page.File.Path }}{{ end }}
+{{- $css := resources.Get "css/wes-palette.css" | minify | fingerprint }}
+{{- $js := resources.Get "js/wes-palette.js" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<div class="wes" data-wes>
+  <button type="button" class="button wes-generate">Generate palette</button>
+  <div class="wes-strip" aria-hidden="true"></div>
+  <p class="wes-movie" aria-live="polite"></p>
+  <div class="wes-meanings"></div>
+</div>
+<script type="application/json" id="wes-palettes">{{ $data.Content | safeJS }}</script>
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

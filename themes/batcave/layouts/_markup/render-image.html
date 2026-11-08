@@ -1,0 +1,9 @@
+{{- /* Markdown images: bundle images get responsive WebP; anything else passes through. */ -}}
+{{- $u := urls.Parse .Destination }}
+{{- with and (not $u.IsAbs) (.PageInner.Resources.Get $u.Path) }}
+  {{- if in (slice "image/jpeg" "image/png" "image/webp") .MediaType.Type }}
+    {{- partial "picture.html" (dict "image" . "alt" $.PlainText) }}
+  {{- else }}<img src="{{ .RelPermalink }}" alt="{{ $.PlainText }}" loading="lazy">{{ end }}
+{{- else }}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" loading="lazy">
+{{- end }}

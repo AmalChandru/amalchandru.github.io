@@ -1,0 +1,5 @@
+{{- /* Fenced code: highlighted with CSS classes, wrapped so main.js can add a Copy button. Optional {title="..."}. */ -}}
+<div class="code">
+  {{- with .Attributes.title }}<p class="code-title">{{ . }}</p>{{ end }}
+  {{- transform.Highlight (strings.TrimRight "\n" .Inner) .Type .Options }}
+</div>

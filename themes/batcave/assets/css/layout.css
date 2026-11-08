@@ -1,0 +1,57 @@
+/* Page frame: wrapper, header + mobile menu, footer, and the rail | measure | wide grid. */
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.skip { position: absolute; left: var(--gutter); top: -4rem; z-index: 10; padding: var(--sp-2) var(--sp-3); border-radius: var(--radius); background: var(--ink); color: var(--paper); font: var(--fw-medium) var(--fs-sm)/1 var(--sans); text-decoration: none; }
+.skip:focus { top: var(--sp-4); }
+
+/* header */
+body > header .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-3) var(--sp-5); padding-block: var(--sp-5); }
+.wordmark { font: var(--fw-bold) var(--fs-lead)/1 var(--serif); letter-spacing: var(--track-heading); color: var(--title); text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); font: var(--fw-regular) var(--fs-ui)/var(--lh-heading) var(--sans); }
+.nav a { color: var(--pencil); text-decoration: none; }
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--edge); text-underline-offset: .5em; }
+
+/* mobile menu (native popover) */
+.menu { color: inherit; }
+.menu-button { display: grid; place-items: center; width: var(--hit); height: var(--hit); margin: -0.6rem -0.6rem -0.6rem 0; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; align-self: center; }
+.menu-button svg { width: var(--sp-5); height: var(--sp-5); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.menu-button .close, :root:has(.menu:popover-open) .menu-button .open { display: none; }
+:root:has(.menu:popover-open) .menu-button .close { display: inline; }
+@media (width < 40rem) {
+  .menu:popover-open { display: flex; flex-direction: column; inset: calc(var(--sp-5) * 2 + var(--fs-lead)) 0 0; width: auto; height: auto; max-width: none; max-height: none; margin: 0; padding: 0 var(--gutter) var(--sp-6); border: 0; border-top: 1px solid var(--rule); background: var(--paper); overflow-y: auto; }
+  .menu .nav { flex-direction: column; flex-wrap: nowrap; gap: 0; font-size: var(--fs-lead); }
+  .menu .nav a { padding-block: var(--sp-4); color: var(--ink); }
+  .menu .nav a + a { border-top: 1px solid var(--rule); }
+  .menu-foot { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: auto; padding-top: var(--sp-5); border-top: 1px solid var(--rule); font: var(--fs-ui)/var(--lh-ui) var(--sans); }
+  .menu-foot a { color: var(--pencil); text-decoration: none; }
+}
+@media (width >= 40rem) {
+  .menu-button, .menu-foot { display: none; }
+  .menu { display: contents; }
+}
+
+/* footer */
+body > footer { font: var(--fw-regular) var(--fs-sm)/var(--lh-ui) var(--sans); color: var(--pencil); }
+body > footer .wrap { position: relative; display: grid; grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr); align-items: center; gap: var(--sp-4) var(--sp-6); padding-block: var(--sp-6); }
+body > footer .wrap::before { content: ""; position: absolute; inset: 0 var(--gutter) auto; border-top: 1px solid var(--rule); }
+body > footer a { color: inherit; text-decoration: none; }
+body > footer a:hover { color: var(--ink); }
+.footer-line { display: block; color: var(--line); }
+.footer-links { grid-column: 2; grid-row: 1; justify-self: center; display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+body > footer .theme { grid-column: 3; grid-row: 1; justify-self: end; }
+@media (width < 40rem) {
+  body > footer .wrap { grid-template-columns: minmax(0, 1fr) auto; gap: var(--sp-3) var(--sp-6); }
+  body > footer .wrap > p { grid-column: 1 / -1; grid-row: 1; }
+  .footer-links { grid-column: 1; grid-row: 2; justify-self: start; }
+  body > footer .theme { grid-column: 2; grid-row: 2; }
+}
+
+/* page grid: rail | measure | wide */
+.page { padding-block: var(--space-block) var(--space-section); }
+.page-head { margin-bottom: var(--space-section); }
+.grid { display: grid; grid-template-columns: [main-start wide-start] minmax(0, 1fr) [main-end wide-end]; }
+.grid > * { grid-column: main; }
+@media (width >= 64rem) {
+  .grid { grid-template-columns: [rail-start] var(--rail) [rail-end main-start wide-start] minmax(0, var(--measure)) [main-end] minmax(0, 1fr) [wide-end]; column-gap: var(--gap); }
+  .grid > .in-rail { grid-column: rail; }
+}

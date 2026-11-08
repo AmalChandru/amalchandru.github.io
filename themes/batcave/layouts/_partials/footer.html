@@ -1,0 +1,12 @@
+<footer>
+  <div class="wrap">
+    <p>© {{ now.Year }} {{ site.Params.author }}{{ with site.Params.footerLine }}<span class="footer-line">{{ . }}</span>{{ end }}</p>
+    <nav class="footer-links" aria-label="Elsewhere">
+      {{- range site.Params.social }}
+      <a href="{{ .url | relURL }}">{{ .name }}</a>
+      {{- end }}
+    </nav>
+    {{- /* Filled with Auto / Light / Dark buttons by main.js. */}}
+    <div class="theme" role="group" aria-label="Theme"></div>
+  </div>
+</footer>

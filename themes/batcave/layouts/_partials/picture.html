@@ -1,0 +1,20 @@
+{{- /*
+  Responsive <img> for a page-bundle image.
+  Context: dict "image" (image resource) "alt" (string) "eager" (bool, optional).
+  Emits WebP srcset at a few widths (never upscaling) with intrinsic width/height.
+*/ -}}
+{{- $img := .image }}
+{{- $widths := slice 480 800 1200 1600 }}
+{{- $srcset := slice }}
+{{- $largest := $img }}
+{{- range $widths }}
+  {{- if le . $img.Width }}
+    {{- $r := $img.Resize (printf "%dx webp q80" .) }}
+    {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $r.Width) }}
+    {{- $largest = $r }}
+  {{- end }}
+{{- end }}
+<img src="{{ $largest.RelPermalink }}"
+  {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="(min-width: 64rem) 38rem, 100vw"{{ end }}
+  width="{{ $largest.Width }}" height="{{ $largest.Height }}" alt="{{ .alt }}"
+  {{- if not .eager }} loading="lazy"{{ end }} decoding="async">
