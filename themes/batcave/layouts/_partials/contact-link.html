@@ -1,0 +1,7 @@
+{{- /*
+  Contact link that hides the email address from scrapers.
+  Context: dict "text" (link text) "class" (optional CSS class).
+  href falls back to params.contact; main.js swaps in mailto: from params.emailBase64.
+*/ -}}
+<a{{ with .class }} class="{{ . }}"{{ end }} href="{{ site.Params.contact }}"
+  {{- with site.Params.emailBase64 }} data-mail="{{ . }}"{{ end }}>{{ .text }}</a>

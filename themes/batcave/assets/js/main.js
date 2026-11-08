@@ -29,6 +29,11 @@
     block.append(btn);
   });
 
+  // Contact links carry the address base64-encoded so it never sits in the HTML.
+  document.querySelectorAll("a[data-mail]").forEach((a) => {
+    try { a.href = "mailto:" + atob(a.dataset.mail); } catch {}
+  });
+
   const links = [...document.querySelectorAll(".contents a")];
   if (links.length) {
     const heads = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);

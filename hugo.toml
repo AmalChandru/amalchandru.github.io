@@ -31,7 +31,11 @@ capitalizeListTitles = false
   description = "Amal Chandran M V. Beep boop engineer, full-time human. Software, systems, electronics and the occasional sketch."
   author = "Amal Chandran M V"
   footerLine = "Built from the Batcave."
-  # Where "Ping me" and "Tell me" links point.
+  # "Ping me" / "Tell me" open an email to this address, stored base64-encoded so it
+  # never appears in plain text (here or in the HTML); main.js turns it into mailto:.
+  # To change it: printf 'you@example.com' | base64
+  emailBase64 = "YW1hbHRhdGh2YUBnbWFpbC5jb20="
+  # Fallback link for visitors without JavaScript.
   contact = "https://www.linkedin.com/in/amal-chandran-m-v/"
   # Hide the "Updated" date in Lately once it is older than this many days.
   latelyStaleDays = 90

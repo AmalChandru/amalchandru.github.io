@@ -28,7 +28,7 @@
 
   <div class="grid">
     <footer class="post-end">
-      <p>Something wrong, or a question? <a href="{{ site.Params.contact }}">Tell me</a>.</p>
+      <p>Something wrong, or a question? {{ partial "contact-link.html" (dict "text" "Tell me") }}.</p>
       {{- $siblings := .CurrentSection.RegularPages }}
       {{- $older := (where $siblings "Date" "lt" .Date).ByDate.Reverse | first 1 }}
       {{- $newer := (where $siblings "Date" "gt" .Date).ByDate | first 1 }}

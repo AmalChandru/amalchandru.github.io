@@ -31,7 +31,7 @@
   <section class="band-section closing" aria-labelledby="closing">
     <h2 class="closing-title" id="closing">{{ .title }}</h2>
     <p>{{ .text }}</p>
-    <p class="cta-row"><a class="button" href="{{ site.Params.contact }}">{{ .label }}</a></p>
+    <p class="cta-row">{{ partial "contact-link.html" (dict "text" .label "class" "button") }}</p>
   </section>
   {{- end }}
 </div>
