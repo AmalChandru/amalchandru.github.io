@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="hero" id="self">
+  <div class="wrap">
+    <p class="eyebrow mono">amalchandran.xyz / self</p>
+    <h1 class="name">{{ .Title }}</h1>
+
+    <div class="bio">
+      {{ .Content }}
+    </div>
+
+    <a class="back-link mono" href="{{ "/" | relURL }}">&larr; back home</a>
+  </div>
+</section>
+{{ end }}

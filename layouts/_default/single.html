@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ $tagClass := "tag--accent" }}
+<article class="post">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>{{ .Title }}</h1>
+      <div class="post-meta mono">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ with .Params.categories }}<span>&middot;</span>{{ range . }}<span>{{ . }}</span>{{ end }}{{ end }}
+      </div>
+    </header>
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+    {{ with .Params.tags }}
+    <div class="post-tags mono">
+      {{ range . }}<span class="tag {{ $tagClass }}">#{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+    <a class="back-link mono" href="{{ .Parent.Permalink }}">&larr; back to {{ .Parent.Title }}</a>
+  </div>
+</article>
+{{ end }}
