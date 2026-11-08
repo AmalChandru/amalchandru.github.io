@@ -51,14 +51,14 @@ capitalizeListTitles = false
     url = "/journals/index.xml"
 
 [[menus.main]]
+  name = "Self"
+  pageRef = "/self"
+  weight = 10
+[[menus.main]]
   name = "Journals"
   pageRef = "/journals"
-  weight = 10
+  weight = 20
 [[menus.main]]
   name = "Talks"
   pageRef = "/talks"
-  weight = 20
-[[menus.main]]
-  name = "Self"
-  pageRef = "/self"
   weight = 30
