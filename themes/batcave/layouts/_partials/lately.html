@@ -1,0 +1,40 @@
+{{- /*
+  "Lately": what I'm building, reading, playing, running, drawn on a clock signal.
+  Data lives in content/lately/index.md (a headless page). One pulse per item.
+*/ -}}
+{{- with site.GetPage "/lately" }}
+{{- $items := .Params.items }}
+{{- $n := len $items }}
+{{- if $n }}
+{{- /* Square wave with one high pulse centred in each of $n equal columns. */}}
+{{- $w := mul $n 100 }}
+{{- $h := "M0 50" }}
+{{- $v := "M10 0" }}
+{{- range $i, $_ := $items }}
+  {{- $x := mul $i 100 }}
+  {{- $h = printf "%s H%d V10 H%d V50" $h (add $x 25) (add $x 75) }}
+  {{- $v = printf "%s V%d H50 V%d H10" $v (add $x 25) (add $x 75) }}
+{{- end }}
+{{- $h = printf "%s H%d" $h $w }}
+{{- $v = printf "%s V%d" $v $w }}
+{{- $stale := gt (now.Sub .Lastmod).Hours (mul (site.Params.latelyStaleDays | default 90) 24) }}
+{{- if $stale }}{{ warnf "lately: %q has not been updated since %s" .File.Path (.Lastmod.Format "2 Jan 2006") }}{{ end }}
+<section class="band-section now" aria-labelledby="now">
+  <div class="now-head">
+    <h2 class="section-title" id="now">{{ .Title }}</h2>
+    {{- if not $stale }}
+    <p class="now-updated">Updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2 January 2006" }}</time></p>
+    {{- end }}
+  </div>
+  <div class="clk" style="--n: {{ $n }}">
+    <svg class="clk-v" viewBox="0 0 60 {{ $w }}" preserveAspectRatio="none" aria-hidden="true"><path class="clk-base" d="{{ $v }}"/><path class="clk-pulse" pathLength="100" d="{{ $v }}"/></svg>
+    <ol class="clk-items">
+      {{- range $items }}
+      <li><span class="sig">{{ .signal }}</span><span class="v">{{ if .cite }}<cite>{{ .title }}</cite>{{ else }}{{ .title }}{{ end }}</span>{{ with .note }}<span class="s">{{ . }}</span>{{ end }}</li>
+      {{- end }}
+    </ol>
+    <div class="clk-h"><span class="clk-label">CLK</span><svg viewBox="0 0 {{ $w }} 60" preserveAspectRatio="none" aria-hidden="true"><path class="clk-base" d="{{ $h }}"/><path class="clk-pulse" pathLength="100" d="{{ $h }}"/></svg></div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

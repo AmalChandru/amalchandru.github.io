@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article id="content" class="wrap page">
+  <div class="grid">
+    <aside class="post-aside in-rail">
+      {{- with .Parent }}<a class="back" href="{{ .RelPermalink }}">All {{ lower .Title }}</a>{{ end }}
+      {{- if and (.Params.toc | default true) (gt (len .Fragments.Headings) 0) }}
+      <nav class="contents" aria-labelledby="toc-title">
+        <p id="toc-title">On this page</p>
+        {{ .TableOfContents }}
+      </nav>
+      {{- end }}
+    </aside>
+
+    <header>
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{- with .Description }}<p class="standfirst">{{ . }}</p>{{ end }}
+      <p class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+        {{- if gt .ReadingTime 1 }}<span>{{ .ReadingTime }} minute read</span>{{ end }}
+        {{- with .GetTerms "tags" }}<span class="tags">{{ range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a> {{ end }}</span>{{ end }}
+      </p>
+    </header>
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <div class="grid">
+    <footer class="post-end">
+      <p>Something wrong, or a question? <a href="{{ site.Params.contact }}">Tell me</a>.</p>
+      {{- $siblings := .CurrentSection.RegularPages }}
+      {{- $older := (where $siblings "Date" "lt" .Date).ByDate.Reverse | first 1 }}
+      {{- $newer := (where $siblings "Date" "gt" .Date).ByDate | first 1 }}
+      {{- if or $older $newer }}
+      <nav class="pager" aria-label="More {{ lower .CurrentSection.Title }}">
+        {{- range $older }}<a class="prev" href="{{ .RelPermalink }}"><small>Older</small><span>{{ .Title }}</span></a>{{ end }}
+        {{- range $newer }}<a class="next" href="{{ .RelPermalink }}"><small>Newer</small><span>{{ .Title }}</span></a>{{ end }}
+      </nav>
+      {{- end }}
+    </footer>
+  </div>
+</article>
+{{ end }}

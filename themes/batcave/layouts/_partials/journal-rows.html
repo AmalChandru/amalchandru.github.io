@@ -1,0 +1,6 @@
+{{- /* Compact title + date rows. Context: a page collection. */ -}}
+<ol class="jlist">
+  {{- range . }}
+  <li><a href="{{ .RelPermalink }}"><span class="jt">{{ .Title }}</span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></a></li>
+  {{- end }}
+</ol>

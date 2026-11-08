@@ -1,0 +1,27 @@
+/* Line-drawing vocabulary for the hero SVG (breadboard, chips, wires, LEDs). */
+.drawing .ln { fill: var(--paper); stroke: var(--ink); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.drawing .ln-open { fill: none; stroke: var(--ink); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.drawing .dt { fill: none; stroke: var(--pencil); stroke-width: .75; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.drawing .hd { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; }
+.drawing .dim { fill: none; stroke: var(--pencil); stroke-width: .75; vector-effect: non-scaling-stroke; }
+.drawing .hole { fill: var(--line); }
+.drawing .tip { fill: var(--ink); }
+.drawing .wire { fill: none; stroke: var(--ink); stroke-width: 2.25; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.drawing .wire.accent { stroke: var(--accent); }
+.drawing .wire.soft { stroke: var(--edge); }
+.drawing .chip { fill: var(--ink); stroke: var(--ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.drawing .chip + path.dt, .drawing .chip ~ circle.dt { stroke: var(--paper); }
+.drawing .chip-t { font: var(--fw-medium) 11px var(--mono); fill: var(--paper); letter-spacing: .02em; }
+.drawing .knob { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.drawing .cap-stripe { fill: none; stroke: var(--pencil); stroke-width: 4; vector-effect: non-scaling-stroke; }
+.drawing .slider { fill: var(--ink); }
+.drawing .led { fill: var(--led); stroke: none; }
+.drawing .glow { fill: var(--led); opacity: .18; }
+.drawing .lbl { font: var(--fw-regular) 15px var(--sans); fill: var(--pencil); }
+.drawing .lbl.ink { fill: var(--ink); font-weight: var(--fw-medium); }
+@media (prefers-reduced-motion: no-preference) {
+  .drawing svg { animation: plot 1.3s cubic-bezier(.3, .6, .2, 1) both; }
+  .drawing .blink { animation: blink var(--d, 1s) steps(1, end) 1.3s infinite; }
+}
+@keyframes plot { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: .12; } }

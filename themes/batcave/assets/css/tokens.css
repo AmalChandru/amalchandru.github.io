@@ -1,0 +1,67 @@
+/*
+  Batcave design tokens. Every colour has a light and a dark value via light-dark();
+  the footer switch forces one by setting data-theme on <html>.
+  Change the look of the whole site here.
+*/
+@layer reset, base;
+
+:root {
+  color-scheme: light dark;
+
+  /* colour */
+  --paper:   light-dark(#eef2f2, #0b1214);  /* page background */
+  --paper-2: light-dark(#e1e8e9, #111b1e);  /* code, inline code */
+  --board:   light-dark(#d8e1e2, #152225);  /* closing band */
+  --ink:     light-dark(#10191b, #d9e4e6);  /* body text */
+  --title:   light-dark(#0a1214, #eef5f6);  /* headings */
+  --pencil:  light-dark(#51605f, #8a9b9e);  /* secondary text */
+  --rule:    light-dark(#cfd9da, #1f2d31);  /* hairlines */
+  --line:    light-dark(#9fb0b2, #42575c);  /* quieter strokes */
+  --edge:    light-dark(#788b8e, #5f7579);  /* borders */
+  --accent:  light-dark(#0f6f86, #5cc8e0);  /* links, signals */
+  --led:     var(--accent);
+  --tip:     light-dark(#1d7a4b, #6fd6a0);
+  --warn:    light-dark(#975a00, #f0b45c);
+  --danger:  light-dark(#b42318, #ff8f80);
+  --code-k:  var(--accent);
+  --code-s:  light-dark(#2b6c4a, #93d6ad);
+  --code-n:  light-dark(#975a00, #f0b870);
+
+  /* type */
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-sm: 0.875rem;
+  --fs-ui: 1rem;
+  --fs-body: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --fs-h2: clamp(1.375rem, 1.25rem + 0.6vw, 1.625rem);
+  --fs-h1: clamp(2rem, 1.55rem + 2vw, 3rem);
+  --fs-display: clamp(2.375rem, 1.5rem + 3.8vw, 4.25rem);
+  --lh-display: 1.08;
+  --lh-heading: 1.25;
+  --lh-ui: 1.5;
+  --lh-body: 1.6;
+  --fw-display: 360;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+  --track-display: -0.022em;
+  --track-heading: -0.01em;
+
+  /* space and layout */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;  --sp-6: 2rem;   --sp-7: 3rem;    --sp-8: 4rem;
+  --space-block: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  --space-section: clamp(3rem, 2rem + 4vw, 5rem);
+  --radius: 3px;
+  --pill: 999px;
+  --hit: 2.75rem;
+  --max: 76rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --measure: 38rem;
+  --rail: 12.5rem;
+  --gap: clamp(2rem, 4vw, 4rem);
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }

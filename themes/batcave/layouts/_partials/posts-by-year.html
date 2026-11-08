@@ -1,0 +1,15 @@
+{{- /* Posts grouped by year: year in the left rail, entries in the main column. Context: a page collection. */ -}}
+{{- range .GroupByDate "2006" }}
+<section class="grid year" aria-labelledby="y{{ .Key }}">
+  <h2 class="year-label in-rail" id="y{{ .Key }}">{{ .Key }}</h2>
+  <ol class="posts">
+    {{- range .Pages }}
+    <li><a href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+      {{- with .Description }}<p>{{ . }}</p>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January" }}</time>
+    </a></li>
+    {{- end }}
+  </ol>
+</section>
+{{- end }}

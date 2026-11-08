@@ -1,0 +1,50 @@
+/* Posts and lists: sticky rail with back link + contents, pager, year-grouped lists, tags. */
+.post-aside .back { display: inline-block; margin-bottom: var(--sp-5); }
+.post-aside a { color: var(--pencil); text-decoration: none; }
+.post-aside a:hover { color: var(--ink); }
+.post-meta { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); margin-top: var(--sp-4); }
+.post-meta .tags a { color: var(--pencil); text-decoration: none; }
+.post-meta .tags a:hover { color: var(--accent); }
+.contents { display: none; }
+@media (width >= 64rem) {
+  .post-aside { grid-row: 1 / span 3; position: sticky; top: var(--sp-6); align-self: start; max-height: calc(100dvh - var(--sp-8)); overflow-y: auto; scrollbar-width: none; }
+  .post-aside .back { margin-bottom: var(--sp-7); }
+  .contents { display: block; }
+  .contents p { color: var(--ink); font-weight: var(--fw-medium); margin-bottom: var(--sp-2); }
+  .contents ul { list-style: none; padding: 0; }
+  .contents ul ul { padding-left: var(--sp-3); }
+  .contents li { margin-top: var(--sp-1); }
+  .contents a { display: block; padding: var(--sp-1) 0 var(--sp-1) var(--sp-3); border-left: 1px solid var(--rule); line-height: var(--lh-heading); }
+  .contents a.active { color: var(--ink); border-color: var(--ink); }
+}
+.post-end { margin-top: calc(var(--space-section) + var(--space-block)); font: var(--fw-regular) var(--fs-ui)/var(--lh-ui) var(--sans); color: var(--pencil); }
+.post-end a { color: var(--ink); }
+.pager { display: grid; gap: var(--sp-5); margin-top: var(--sp-6); }
+.pager a { display: block; color: var(--ink); text-decoration: none; }
+.pager small { display: block; margin-bottom: var(--sp-1); }
+.pager span { font: var(--fw-medium) var(--fs-body)/var(--lh-heading) var(--serif); }
+.pager a:hover span { color: var(--accent); }
+@media (width >= 40rem) { .pager { grid-template-columns: 1fr 1fr; } .pager .next { grid-column: 2; text-align: right; } }
+
+/* year-grouped lists (journals, talks, tags) */
+.year { padding-block: var(--space-block); }
+.year-label { font-size: var(--fs-h2); font-weight: var(--fw-display); font-variant-numeric: oldstyle-nums; color: var(--pencil); margin-bottom: var(--sp-4); }
+@media (width >= 64rem) { .year-label { margin: 0; position: sticky; top: var(--sp-5); align-self: start; } }
+.posts > li + li { margin-top: var(--sp-6); }
+.posts a { color: var(--ink); text-decoration: none; }
+.posts a:hover h3 { color: var(--accent); }
+.posts p { margin-top: var(--sp-2); font-size: var(--fs-ui); line-height: var(--lh-ui); color: var(--pencil); }
+.posts time { display: block; margin-top: var(--sp-2); }
+
+/* simple pages (Self) */
+.simple-head { margin-bottom: 0; }
+
+/* tag index */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-5); font: var(--fs-ui)/var(--lh-ui) var(--sans); }
+.tag-cloud a { color: var(--ink); text-decoration: none; }
+.tag-cloud a:hover { color: var(--accent); }
+.tag-cloud span { color: var(--pencil); font-size: var(--fs-sm); }
+/* lede prose: the homepage intro style, used for simple pages like Self */
+.lede { font-size: var(--fs-lead); line-height: var(--lh-ui); color: var(--pencil); }
+.lede > * + * { margin-top: var(--sp-4); }
+.lede a { color: inherit; }

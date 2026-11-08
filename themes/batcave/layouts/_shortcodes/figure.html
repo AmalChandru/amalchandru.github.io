@@ -1,0 +1,15 @@
+{{- /*
+  {{< figure src="photo.jpg" alt="What it shows" caption="Optional caption" >}}
+  src is a file in the page bundle (resized to WebP) or a URL.
+*/ -}}
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" | default (.Get "caption" | plainify) }}
+<figure>
+  {{- with .Page.Resources.Get $src }}
+    {{- partial "picture.html" (dict "image" . "alt" $alt) }}
+  {{- else }}
+    {{- if not (strings.HasPrefix $src "http") }}{{ errorf "figure: %q not found in bundle %s" $src $.Page.File.Path }}{{ end }}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+  {{- end }}
+  {{- with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

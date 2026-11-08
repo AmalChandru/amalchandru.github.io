@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div id="content" class="home">
+  <section class="hero" aria-labelledby="pitch">
+    <div class="hero-text">
+      <h1 class="hero-title" id="pitch">{{ .Params.headline | default site.Title }}</h1>
+      <div class="hero-lead">{{ .Content }}</div>
+      {{- with .Params.actions }}
+      <p class="cta-row">
+        {{- range . }}
+        <a class="{{ cond (.primary | default false) "button" "quiet" }}" href="{{ .url | relURL }}">{{ .label }}</a>
+        {{- end }}
+      </p>
+      {{- end }}
+    </div>
+    <figure class="hero-portrait drawing">{{ partial "clock-module.html" . }}</figure>
+  </section>
+
+  <div class="wrap home-body">
+    {{- partial "lately.html" . }}
+
+    {{- with site.GetPage "/journals" }}
+    <section class="band-section journals" aria-labelledby="journals">
+      <h2 class="section-title" id="journals">{{ .Title }}</h2>
+      {{- partial "journal-rows.html" (first 4 .RegularPages.ByDate.Reverse) }}
+      <p class="more"><a class="quiet" href="{{ .RelPermalink }}">All {{ lower .Title }} →</a></p>
+    </section>
+    {{- end }}
+  </div>
+
+  {{- with .Params.signal }}
+  <section class="band-section closing" aria-labelledby="closing">
+    <h2 class="closing-title" id="closing">{{ .title }}</h2>
+    <p>{{ .text }}</p>
+    <p class="cta-row"><a class="button" href="{{ site.Params.contact }}">{{ .label }}</a></p>
+  </section>
+  {{- end }}
+</div>
+{{ end }}

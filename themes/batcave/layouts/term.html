@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div id="content" class="wrap page">
+  <div class="grid">
+    <header class="page-head">
+      <h1 class="page-title">#{{ .Title }}</h1>
+      <p class="page-lead"><a href="{{ .Parent.RelPermalink }}">All tags</a></p>
+    </header>
+  </div>
+  {{- partial "posts-by-year.html" .Pages }}
+</div>
+{{ end }}

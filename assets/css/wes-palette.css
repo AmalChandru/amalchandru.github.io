@@ -1,0 +1,10 @@
+/* Wes Anderson palette widget (journals/wes-pallete). Uses the theme's tokens. */
+.wes { max-width: 38rem; }
+.wes-strip { display: flex; height: 5rem; margin-top: var(--sp-5); border-radius: var(--radius); overflow: hidden; }
+.wes-strip:empty { display: none; }
+.wes-strip span { flex: 1; }
+.wes-movie { margin-top: var(--sp-2); font: italic var(--fs-sm)/var(--lh-ui) var(--sans); color: var(--pencil); }
+.wes-movie a { color: var(--ink); font-style: normal; font-weight: var(--fw-bold); text-decoration: none; }
+.wes-meanings p { margin-top: var(--sp-3); font-size: var(--fs-ui); line-height: var(--lh-ui); }
+.wes-meanings .swatch { display: inline-block; width: .8em; height: .8em; margin-right: .4em; border-radius: 50%; vertical-align: -.05em; outline: 1px solid color-mix(in oklab, var(--ink) 15%, transparent); }
+.wes-meanings code { font-size: .875em; color: var(--ink); }
