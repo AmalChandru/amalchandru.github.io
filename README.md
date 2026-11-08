@@ -1,7 +1,7 @@
 # amalchandran.xyz
 
 Personal site, built with [Hugo](https://gohugo.io) (v0.146+) and a small in-repo theme, **Batcave**.
-The built site is published from the `amalchandru.github.io` repo (GitHub Pages, custom domain via `static/CNAME`).
+Hosted on GitHub Pages (custom domain via `static/CNAME`). Pushing to `master` builds and deploys the site automatically (`.github/workflows/deploy.yml`).
 
 ## Everyday tasks
 
@@ -14,15 +14,11 @@ The built site is published from the `amalchandru.github.io` repo (GitHub Pages,
 | Update "Lately" | Edit `content/lately/index.md` (BUILD / READ / PLAY / RUN). The "Updated" date follows the last commit to that file (or its modification time if uncommitted). It hides itself after `params.latelyStaleDays` (90) days without an update. |
 | Callouts in posts | `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`, `> [!CAUTION]` |
 | Code block title | ```` ```bash {title="setup.sh"} ```` |
-| Build for production | `hugo --gc --minify` → output in `public/` |
+| Build locally (optional check) | `hugo --gc --minify` → output in `public/` |
 
 ## Deploy
 
-```sh
-hugo --gc --minify
-rsync -a --delete --exclude .git ../amalchandran-site/public/ ../amalchandru.github.io/
-cd ../amalchandru.github.io && git add -A && git commit -m "Deploy" && git push
-```
+Commit and push to `master`. The **Deploy site** workflow builds with Hugo and publishes to GitHub Pages; watch it under the repo's **Actions** tab. Built files (`public/`) are never committed.
 
 ## Layout
 
